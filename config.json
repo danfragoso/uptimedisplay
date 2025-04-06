@@ -1,0 +1,31 @@
+{
+    "device_path": "/dev/ttyACM0",
+    "baud_rate": 115200,
+    "update_interval": 3,
+    "props": [
+        {
+            "name": "Uptime",
+            "command": "uptime -p | sed 's/up //; s/,//g'"
+        },
+        {
+            "name": "Kernel Version",
+            "command": "uname -r"
+        },
+        {
+            "name": "Logged Users",
+            "command": "who | wc -l"
+        },
+        {
+            "name": "Processes",
+            "command": "ps -e | wc -l"
+        },
+        {
+            "name": "CPU Model",
+            "command": "cat /proc/cpuinfo | grep 'model name' | head -n 1 | cut -d ':' -f2 | xargs"
+        },
+        {
+            "name": "CPU Temperature",
+            "command": "cat /sys/class/thermal/thermal_zone0/temp | awk '{print $1/1000}' | sed 's/$/°C/'"
+        }
+    ]
+}

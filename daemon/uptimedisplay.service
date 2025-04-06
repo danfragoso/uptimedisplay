@@ -1,0 +1,15 @@
+[Unit]
+Description=Uptime Displat
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/local/bin/uptimedisplay
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
