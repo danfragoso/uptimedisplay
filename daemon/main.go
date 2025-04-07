@@ -25,9 +25,9 @@ type Config struct {
 }
 
 func main() {
-	log.Println("Starting status display daemon")
+	log.Println("Starting uptimedisplay daemon")
 
-	configPath := "/var/status-display/config.json"
+	configPath := "/var/uptimedisplay/config.json"
 	config, err := readConfig(configPath)
 	if err != nil {
 		log.Fatalf("Failed to read config: %v", err)
